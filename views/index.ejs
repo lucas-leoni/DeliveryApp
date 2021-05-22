@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('./partials/header.ejs') %>  
+<body>
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="/img/logo_pizza.png" width="150" height="150" alt="">
+        </a>
+    </nav>
+    <nav class="navbar navbar-light bg-white" id="bandeira"></nav>
+    <div class="row">
+        <aside class="col-3" id="aside-left">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-massas-list" data-toggle="list" href="#list-massas" role="tab" aria-controls="massas">Massas</a>
+                <a class="list-group-item list-group-item-action" id="list-pizzas-list" data-toggle="list" href="#list-pizzas" role="tab" aria-controls="pizzas">Pizzas</a>
+                <a class="list-group-item list-group-item-action" id="list-fogazzas-list" data-toggle="list" href="#list-fogazzas" role="tab" aria-controls="fogazzas">Fogazzas</a>
+                <a class="list-group-item list-group-item-action" id="list-calzones-list" data-toggle="list" href="#list-calzones" role="tab" aria-controls="calzones">Calzones</a>
+            </div>
+        </aside>
+        <main class="col-8">
+            <div class="row">
+                <div class="col-4">
+                    <img src="/img/calabresa_pizza.jpg" alt="" class="img-thumbnail">
+                </div>
+                <div class="col-4">
+                    <img src="/img/tomate_seco_pizza.jpg" alt="" class="img-thumbnail">
+                </div>
+                <div class="col-4">
+                    <img src="/img/logo_pizza.png" alt="" class="img-thumbnail">
+                </div>
+            </div>
+        </main>
+    </div>
+<%- include('./partials/footer.ejs') %> 
+</body>
+</html>

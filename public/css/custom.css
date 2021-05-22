@@ -1,0 +1,26 @@
+body {
+    background-image: url(../img/background_pizza.jpg);
+}
+
+.navbar {
+    background-color: #fed330;
+    border-bottom: 10px solid green;
+    padding-bottom: 0px;
+}
+
+#bandeira {
+    border-bottom: 10px solid red;
+}
+
+.row {
+    margin: 0px 0px 0px 0px;
+}
+
+#aside-left{
+    margin: 50px 70px 0px 50px;
+}
+
+main{
+    margin: 50px 0px 0px 0px;
+
+}
