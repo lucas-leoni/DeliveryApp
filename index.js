@@ -8,20 +8,134 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+const connection = require('./database/database');
+connection
+  .authenticate()
+  .then(() => {
+    console.log('MYSQL, CONECTADO');
+  }).catch((error) => {
+    console.error(error);
+  });
+
+const Produto = require('./database/Produto');
+
+app.get('/cadastrar-produto', (req, res) => {
+    
+    res.render('cadastrar-produto');
+});
+
+app.post('/salvar-produto', (req, res) => {
+    let nm_produto = req.body.nm_produto;
+    let ds_produto = req.body.ds_produto;
+    let vl_unitario = req.body.vl_unitario;
+    let categoria = req.body.categoria;
+
+    Produto.create({
+      nm_produto: nm_produto, 
+      ds_produto: ds_produto,
+      vl_unitario: vl_unitario,
+      categoria: categoria
+    }).then(() => {
+      res.redirect('/');
+    }).catch((error) => {
+      console.error(`Ocorreu um erro, ao salvar o produto -  ${error}`);
+    });
+});
+
 app.get('/', (req, res) => {
-    res.render('index');
+    Produto.findAll({
+      raw: true, 
+      order: [[ 'id' ]],
+      where: {categoria: 'pizza'}
+    }).then((produto) => {
+      res.render('index', {
+        produto: produto
+      });
+    });
 });
 
 app.get('/pizzas', (req, res) => {
-    res.render('pizzas');
+    Produto.findAll({
+      raw: true, 
+      order: [[ 'id' ]],
+      where: {categoria: 'pizza'}
+    }).then((produto) => {
+      res.render('index', {
+        produto: produto
+      });
+    });
 });
 
-app.get('/pedidos', (req, res) => {
-    res.render('pedidos');
+app.get('/massas', (req, res) => {
+    Produto.findAll({
+      raw: true, 
+      order: [[ 'id' ]],
+      where: {categoria: 'massa'}
+    }).then((produto) => {
+      res.render('index', {
+        produto: produto
+      });
+    });
 });
 
-app.get('/realizar-pedido', (req, res) => {
-    res.render('realizar-pedido');
+app.get('/calzones', (req, res) => {
+    Produto.findAll({
+      raw: true, 
+      order: [[ 'id' ]],
+      where: {categoria: 'calzone'}
+    }).then((produto) => {
+      res.render('index', {
+        produto: produto
+      });
+    });
+});
+
+app.get('/esfihas', (req, res) => {
+    Produto.findAll({
+      raw: true, 
+      order: [[ 'id' ]],
+      where: {categoria: 'esfiha'}
+    }).then((produto) => {
+      res.render('index', {
+        produto: produto
+      });
+    });
+});
+
+app.get('/sobremesas', (req, res) => {
+    Produto.findAll({
+      raw: true, 
+      order: [[ 'id' ]],
+      where: {categoria: 'sobremesa'}
+    }).then((produto) => {
+      res.render('index', {
+        produto: produto
+      });
+    });
+});
+
+app.get('/bebidas', (req, res) => {
+    Produto.findAll({
+      raw: true, 
+      order: [[ 'id' ]],
+      where: {categoria: 'bebida'}
+    }).then((produto) => {
+      res.render('index', {
+        produto: produto
+      });
+    });
+});
+
+app.get('/produto/:id', (req, res) => {
+    const {id} = req.params;
+    Produto.findAll({
+      raw: true, 
+      where: {id: id}
+    }).then((produto) => {
+      res.render('produto', {
+        produto: produto
+      });
+    });
 });
 
 app.listen(9000, (erro) => {
