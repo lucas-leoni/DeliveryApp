@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('./partials/head.ejs') %> 
+<body>
+    <%- include('./partials/header.ejs') %> 
+    <div class="container" id="cadastro-produto">
+        <h1>Cadastrar Novo Produto</h1>
+        <form action="/salvar-produto" method="POST">
+            <div class="form-group">
+                <label>Nome do Produto</label>
+                <input type="text" class="form-control" name="nm_produto" placeholder="Exemplo: Pizza de Calabresa">
+            </div>
+            <div class="form-group">
+                <label>Descrição do Produto</label>
+                <input type="text" class="form-control" name="ds_produto" placeholder="Exemplo: Mussarela, calabresa e orégano.">
+            </div>
+            <div class="form-group">
+                <label>Valor do Produto</label>
+                <input type="number" step="0.01" min="0.01" class="form-control" name="vl_unitario" placeholder="Exemplo: 34,99">
+            </div>
+            <div class="form-group">
+                <label>Categoria do Produto</label>
+                <input type="text" class="form-control" name="categoria" placeholder="Exemplo: Pizza">
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+<%- include('./partials/footer.ejs') %> 
+</body>
+</html>

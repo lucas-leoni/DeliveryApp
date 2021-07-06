@@ -1,11 +1,12 @@
 body {
-    background-image: url(../img/background_pizza.jpg);
+    background-color: #485460;
 }
 
 .navbar {
     background-color: #fed330;
     border-bottom: 10px solid green;
     padding-bottom: 0px;
+    padding: 8px 16px 0px 190px;
 }
 
 #bandeira {
@@ -13,14 +14,56 @@ body {
 }
 
 .row {
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
 }
 
-#aside-left{
-    margin: 50px 70px 0px 50px;
+#aside-left {
+    margin: 75px 0px 0px 0px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #485460;
 }
 
-main{
-    margin: 50px 0px 0px 0px;
+#aside-main {
+    display: flex;
+    justify-content: space-around;
+}
 
+#images {
+    margin: 0px 0px 75px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    margin: 75px 0px 0px 0px;
+}
+
+#cadastro-produto {
+    padding: 75px;
+    color: white;
+}
+
+#cadastro-produto h1 {
+    text-align: center;
+}
+
+.nav-link {
+    border: 2px solid #485460;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: white;
+    color: #485460;
+}
+
+.nav-link:hover {
+    border: 2px solid white;
+    background-color: #485460;
+    color: white;
+}
+
+.nav-link.active:hover {
+    border: 2px solid #007BFF;
 }
