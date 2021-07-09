@@ -11,9 +11,12 @@
                     <div class="card" style="width: 18rem;">
                         <img src="/img/pizza.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title"><%= produto.nm_produto %></h5>
+                            <h5 class="card-title"><b><%= produto.nm_produto %></b></h5>
                             <p class="card-text"><%= produto.ds_produto %></p>
-                            <a href="/produto/1" class="btn btn-primary">Visualizar</a>
+                            <p class="card-text"><b>R$ <%= produto.vl_unitario %></b></p>
+                            <a href="/" class="btn btn-primary">Voltar</a>
+                            <a href="/produto/<%= produto.id %>/atualizar" class="btn btn-success">Atualizar</a>
+                            <a href="/deletar-produto/<%= produto.id %>" class="btn btn-danger" onclick="return confirm('Você deseja excluir o produto ?');">Deletar</a>
                         </div>
                     </div>
                 <% }); %>

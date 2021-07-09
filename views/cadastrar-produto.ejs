@@ -22,7 +22,7 @@
                 <label>Categoria do Produto</label>
                 <input type="text" class="form-control" name="categoria" placeholder="Exemplo: Pizza">
             </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Você deseja cadastrar o produto ?');">Salvar</button>
         </form>
     </div>
 <%- include('./partials/footer.ejs') %> 
