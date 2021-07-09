@@ -11,8 +11,9 @@
                     <div class="card" style="width: 18rem;">
                         <img src="/img/pizza.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title"><%= produto.nm_produto %></h5>
+                            <h5 class="card-title"><b><%= produto.nm_produto %></b></h5>
                             <p class="card-text"><%= produto.ds_produto %></p>
+                            <p class="card-text"><b>R$ <%= produto.vl_unitario %></b></p>
                             <a href="/produto/<%= produto.id %>" class="btn btn-primary">Visualizar</a>
                         </div>
                     </div>

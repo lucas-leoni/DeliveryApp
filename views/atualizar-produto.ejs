@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('./partials/head.ejs') %> 
+<body>
+    <%- include('./partials/header.ejs') %> 
+    <div class="container" id="cadastro-produto">
+        <h1>Atualizar Produto</h1>
+        <% produto.forEach(produto => { %>
+            <form action="/atualizar-produto/<%= produto.id %>" method="POST">
+                <div class="form-group">
+                    <label>Atualizar Nome do Produto</label>
+                    <input type="text" class="form-control" name="att_nm_produto" placeholder="Exemplo: Pizza de Calabresa">
+                </div>
+                <div class="form-group">
+                    <label>Atualizar Descrição do Produto</label>
+                    <input type="text" class="form-control" name="att_ds_produto" placeholder="Exemplo: Mussarela, calabresa e orégano.">
+                </div>
+                <div class="form-group">
+                    <label>Atualizar Valor do Produto</label>
+                    <input type="number" step="0.01" min="0.01" class="form-control" name="att_vl_unitario" placeholder="Exemplo: 34,99">
+                </div>
+                <div class="form-group">
+                    <label>Atualizar Categoria do Produto</label>
+                    <input type="text" class="form-control" name="att_categoria" placeholder="Exemplo: Pizza">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="return confirm('Você deseja atualizar o produto ?');">Atualizar</button>
+            </form>
+        <% }); %>
+    </div>
+<%- include('./partials/footer.ejs') %> 
+</body>
+</html>
